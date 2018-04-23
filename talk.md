@@ -802,7 +802,7 @@ index=['Miraculix', 'Asterix', 'Obelix', 'Kaningentix'])
             b    c    d
 Asterix   0.0  1.0  2.0
 Obelix    3.0  4.0  5.0
-Kanalltix  6.0  7.0  8.0	    
+Kanalltix 6.0  7.0  8.0	    
 >>> df2
                b     d     e
 Miraculix    0.0   1.0   2.0
@@ -812,7 +812,7 @@ Kaningentix  9.0  10.0  11.0
 >>> df1+df2
                b   c     d   e
 Asterix      3.0 NaN   6.0 NaN
-Kanaltix     NaN NaN   NaN NaN
+Kanalltix    NaN NaN   NaN NaN
 Kaningentix  NaN NaN   NaN NaN
 Miraculix    NaN NaN   NaN NaN
 Obelix       9.0 NaN  12.0 NaN
@@ -1165,6 +1165,7 @@ From 1880 to 2015, a file is available containing the year of birth, together wi
 [136 rows x 3 columns]
 
 >>> tb.plot(title='Total births by sex and year', x='year')
+>>> plt.show()
 
 ```
 
@@ -1176,6 +1177,7 @@ Previous version of Pandas:
 >>> tb.plot(title='Total births by sex and year', x='year',y=['F','M'])
 
 ```
+-->
 
 ---
 
@@ -1218,10 +1220,16 @@ $ source venv/bin/activate
 
 <!--
 Illustration with BeautifulSoup4 (bs4):
+BeautifulSoup4 expands compactly written html code.
 
-pip3 install BeautifulSoup4
+$ mkdir TRY_3
+$ cp story.py TRY_3
+$ cd TRY_3
+$ python3 -m venv ./venv
+$ source venv/bin/activate
+(venv)$ pip3 install BeautifulSoup4
 
-story.py:
+Look inside story.py and point at:
 from bs4 import BeautifulSoup
 soup = BeautifulSoup(html_doc, 'html.parser')
 print(soup.prettify())
