@@ -1014,6 +1014,7 @@ Subplots are made using `add_subplot`.
 >>> ax1 = fig.add_subplot(2,2,1)
 >>> ax2 = fig.add_subplot(2,2,2)
 >>> ax3 = fig.add_subplot(2,2,3)
+>>> plt.show()
 
 ```
 
@@ -1039,11 +1040,11 @@ rotation=30, fontsize='small')
 >>> ax.set_title('One of my first matplotlib plots')
 <matplotlib.text.Text at 0x2ab9f9648c50>
 >>> ax.set_xlabel('Stages')
-
+>>> plt.show()
 
 ```
 
-<img src="img/figure_C.png" height="250"/>
+<img src="img/figure_C.png" height="200"/>
 
 ---
 
@@ -1060,6 +1061,7 @@ Adding a legend is only possible when more than one plot is included in the grap
 >>> ax.plot(np.random.randn(1000).cumsum(), 'k.', label='three')
 [<matplotlib.lines.Line2D at 0x2ab9f9aa96d0>]
 >>> ax.legend(loc='best')
+>>> plt.show()
 
 ```
 
@@ -1069,7 +1071,7 @@ Adding a legend is only possible when more than one plot is included in the grap
 
 ## Matplotlib - Saving plots to a file
 
-To save the figure on the last figure, `savefig` can be used. Pay attention to the extension - `.png`, `.jpg` and `.pdf` give the respective format of the pictures. The resolution can be indicated using `dpi`.
+As long as 'plt.show()' is not used, the figure on the last figure can be saved using `savefig`. Pay attention to the extension - `.png`, `.jpg` and `.pdf` give the respective format of the pictures. The resolution can be indicated using `dpi`.
 
 ```
 >>> plt.savefig('myfavouritelastpic.png', dpi=400)
@@ -1085,6 +1087,7 @@ To save the figure on the last figure, `savefig` can be used. Pay attention to t
 ```
 >>> s= pd.Series(np.random.randn(10).cumsum(), index=np.arange(0, 100, 10))
 >>> s.plot()
+>>> plt.show()
 
 ```
 
@@ -1094,6 +1097,7 @@ To save the figure on the last figure, `savefig` can be used. Pay attention to t
 >>> df = pd.DataFrame(np.random.randn(10, 4).cumsum(0),
 columns = ['A', 'B', 'C', 'D'], index=np.arange(0, 100, 10))
 >>> df.plot()
+>>> plt.show()
 
 ```
 
@@ -1106,8 +1110,9 @@ columns = ['A', 'B', 'C', 'D'], index=np.arange(0, 100, 10))
 ### Bar plots
 
 ```
->>> data = pd.Series(np.random.rand(16), index=list('abcdefghijklmnopq'))
+>>> data = pd.Series(np.random.rand(16), index=list('abcdefghijklmnop'))
 >>> data.plot(kind='barh', color='r', alpha=0.5)
+>>> plt.show()
 
 ```
 
@@ -1159,6 +1164,15 @@ From 1880 to 2015, a file is available containing the year of birth, together wi
 
 [136 rows x 3 columns]
 
+>>> tb.plot(title='Total births by sex and year', x='year')
+
+```
+
+<!--
+
+Previous version of Pandas:
+
+```
 >>> tb.plot(title='Total births by sex and year', x='year',y=['F','M'])
 
 ```
