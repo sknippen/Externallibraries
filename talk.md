@@ -1071,7 +1071,7 @@ Adding a legend is only possible when more than one plot is included in the grap
 
 ## Matplotlib - Saving plots to a file
 
-As long as 'plt.show()' is not used, the figure on the last figure can be saved using `savefig`. Pay attention to the extension - `.png`, `.jpg` and `.pdf` give the respective format of the pictures. The resolution can be indicated using `dpi`.
+As long as 'plt.show()' is not written, `savefig` can be used to save the last picture. Pay attention to the extension - `.png`, `.jpg` and `.pdf` give the respective format of the pictures. The resolution can be indicated using `dpi`.
 
 ```
 >>> plt.savefig('myfavouritelastpic.png', dpi=400)
